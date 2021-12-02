@@ -13,11 +13,11 @@ async function run() {
         }
 
         const scanApi = "/api/v1/cicd/scan/"
-        const strobesUrl = core.getInput('strobes_url', true);
-        const token = core.getInput('auth_token', true);
-        const configName = core.getInput('config_name', true);
-        const branch = core.getInput('target', true);
-        const rules = core.getInput('rules', false)
+        const strobesUrl = core.getInput('strobes_url');
+        const token = core.getInput('auth_token');
+        const configName = core.getInput('config_name');
+        const branch = core.getInput('target');
+        const rules = core.getInput('rules')
 
         console.log("Starting Strobes scan")
         let scan_url = strobesUrl + scanApi;
