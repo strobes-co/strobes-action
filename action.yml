@@ -1,0 +1,24 @@
+name: "Strobes API Scan"
+author: "Akhil Reni"
+description: "Scan the repo for security Vulnerabilities using strobes API"
+
+inputs:
+  strobes_url:
+    description: "Remote Strobes URL"
+    required: true
+  auth_token:
+    description: "Strobes Authorization Token to be used for API calls for remote scan"
+    required: true
+  target:
+    description: "Branch Name of git repository to be scanned"
+    required: true
+  config_name:
+    description: "Configuration name in Strobes server which is to be used for scan"
+    required: true
+  rules:
+    description: "Rules to check for threshold of bugs to be found"
+    required: false
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
