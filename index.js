@@ -1,5 +1,6 @@
-const fetch = require('node-fetch');
+const https = require('https');
 const core = require('@actions/core');
+const { request } = require('http');
 
 
 async function run() {
@@ -24,7 +25,7 @@ async function run() {
         let jsonResponse = { task_id: '' };
         let taskId;
 
-        const fetchRes = await fetch(scan_url, {
+        const fetchRes = await https.request(scan_url, {
             method: 'POST',
             body: JSON.stringify({
                 configuration_name: configName,
@@ -43,7 +44,7 @@ async function run() {
             const statusApi = "/api/v1/cicd/status/"
             let scan_url = strobesUrl + statusApi + taskId + "/"
             let statusResponse = {};
-            const fetchRes = await fetch(scan_url, {
+            const fetchRes = await https.request(scan_url, {
                 method: 'GET',
                 headers: {
                     'Content-type': 'application/json',
