@@ -15,8 +15,16 @@ inputs:
   config_name:
     description: "Configuration name in Strobes server which is to be used for scan"
     required: true
+  timeout:
+    description: "Timeout for the wait to get result from strobes"
+    required: false
+    default: "300"
+  no_wait:
+    description: "Enables no waiting for result"
+    required: false
+    default: "false"
   rules:
-    description: "Rules to check for threshold of bugs to be found"
+    description: "Rules to check for threshold of bugs to be found(comma seprated)"
     required: false
 
 runs:
