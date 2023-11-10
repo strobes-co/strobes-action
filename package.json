@@ -19,6 +19,6 @@
   "homepage": "https://github.com/strobes-co/strobes-action#readme",
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "axios": "^0.25.0"
+    "axios": "^1.6.0"
   }
 }
